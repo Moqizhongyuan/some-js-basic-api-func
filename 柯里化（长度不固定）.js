@@ -16,3 +16,12 @@ function currying(fn) {
   };
 }
 const addCurry = currying(add);
+
+function curry(fn) {
+  const arity = fn.length;
+  return function curried(...args) {
+    const newArgs = args.length === 0 ? [undefined] : args;
+    if (newArgs.length > arity) return fn(...newArgs);
+    return curried.bind(null, ...newArgs);
+  };
+}
