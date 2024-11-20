@@ -11,7 +11,7 @@ yzyAxios.prototype.request = function (config) {
   // 创建一个成功的promise
   let promise = Promise.resolve(config);
   // undefined用于占位，保持两个一组
-  let chains = [dispatchRequest, undefined];
+  let chains = [dispatchRequest(config), undefined];
 
   // 将request里面的handlers数组中存储的请求拦截器的回调从chains数组的前面压入chains数组
   this.interceptors.request.handlers.forEach((item) => {
