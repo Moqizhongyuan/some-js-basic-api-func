@@ -8,6 +8,6 @@ function myInstanceof(left, right) {
     if (proto === myPrototype) {
       return true;
     }
-    proto = proto.prototype;
+    proto = Object.getPrototypeOf(proto);
   }
 }
