@@ -1,3 +1,3 @@
-function uniqueArray(arr) {
+function uniqueArray(arr: any[]) {
   return Array.from(new Set(arr));
 }
